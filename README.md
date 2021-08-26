@@ -11,9 +11,7 @@ pip install pyqt5-tools
 Para instalar o MySQL é so baixar o MySQL Workbench:\
 https://dev.mysql.com/downloads/workbench/ 
 
-Para se conectar ao banco de dados edite a  classe Banco_Dados do arquivo BD.py\
-que conecta com o banco de dados, de acordo com a criação da sua máquina:
-ex.:\
+Para se conectar ao banco de dados, crie uma conexão com os seguintes dados:\
 host = "localhost"\
 user = "root"\
 password = "123456"\
