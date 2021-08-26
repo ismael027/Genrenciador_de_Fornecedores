@@ -229,7 +229,7 @@ border-radius: 10px;</string>
       </widget>
      </item>
      <item row="11" column="1">
-      <widget class="QPushButton" name="Entrar_2">
+      <widget class="QPushButton" name="add">
        <property name="minimumSize">
         <size>
          <width>100</width>
@@ -252,7 +252,7 @@ border-radius: 10px;</string>
 border-radius: 10px;</string>
        </property>
        <property name="text">
-        <string>Cadastrar</string>
+        <string>Criar conta</string>
        </property>
       </widget>
      </item>
@@ -280,7 +280,7 @@ border-radius: 10px;</string>
   <tabstop>lineEdit</tabstop>
   <tabstop>lineEdit_2</tabstop>
   <tabstop>Entrar</tabstop>
-  <tabstop>Entrar_2</tabstop>
+  <tabstop>add</tabstop>
  </tabstops>
  <resources/>
  <connections/>
