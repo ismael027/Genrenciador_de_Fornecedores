@@ -10,7 +10,7 @@ class Estoque():
     def __init__(self):
         self.Tela_Estoque = uic.loadUi("tela_estoque.ui")
         self.Tela_Estoque.remover.clicked.connect(self.Excluir_Estoque)
-        #self.Tela_CadastroEst.Pesquisar.clicked.connect(self.Pesquisa)
+        self.Tela_Estoque.Pesquisar.clicked.connect(self.Pesquisa)
 
     def Tabela_Estoque(self):
         sql = "SELECT Q.codigo, Q.nome, Q.tipo_produto, Q.quantidade, Q.data_entrada, Q.hora FROM produto P, estoque Q where P.codigo = Q.codigo"
@@ -31,27 +31,19 @@ class Estoque():
         id_excluir = resultado[linha][0]  # Pega o codigo do produto da linha selecionada
         sql = "DELETE FROM trabalho_gestor_fornecedores.estoque WHERE id =" + str(id_excluir)
         banco.deletar(sql)
-    '''
+
     def Pesquisa(self):
-        # Pega o codigo digitado e joga nos campos brancos os dados para alteração
-        id_busca = self.Tela_CadastroEst.lineEdit_5.text()
-        sql = "SELECT * FROM trabalho_gestor_fornecedores.estoque WHERE codigo =" + str(id_busca)
+        # Pega o codigo digitado e preenche a tabela
+        codigo = self.Tela_Estoque.lineEdit.text()
+        sql = "SELECT Q.codigo, Q.nome, Q.tipo_produto, Q.quantidade, Q.data_entrada, Q.hora FROM produto P, estoque Q where P.codigo = Q.codigo AND Q.codigo ="+str(codigo)
+        resultado = banco.pesquisa(sql)
 
-        result = banco.pesquisa(sql)
-
-        self.Tela_CadastroEst.lineEdit.setText(str(result[0][0]))
-        self.Tela_CadastroEst.lineEdit_2.setText(str(result[0][1]))
-        self.Tela_CadastroEst.lineEdit_3.setText(str(result[0][2]))
-        self.Tela_CadastroEst.lineEdit_4.setText(str(result[0][3]))
-    '''
-    def Menu_Cadastro(self):
-        #Chama a tela de cadastro/alterar
-        self.Tela_CadastroEst.show()
-        #Seta a linha com o texto
-        self.Tela_CadastroEst.lineEdit_5.setText('Para alterar o estoque, digite o código do produto.')
-        self.Tela_CadastroEst.lineEdit_3.setText('{}'.format(data.strftime('%y/%m/%d')))
-        self.Tela_CadastroEst.lineEdit_4.setText('AA/MM/DD')
+        self.Tela_Estoque.tabela.setRowCount(len(resultado))
+        for i in range(0, len(resultado)):
+            for j in range(0, 6):
+                    self.Tela_Estoque.tabela.setItem(i, j, QtWidgets.QTableWidgetItem(str(resultado[i][j])))
 
     def Menu_Estoque(self):
+        self.Tela_Estoque.lineEdit.setText("Para filtrar um produto, digite seu código.")
         self.Tela_Estoque.show()
         self.Tabela_Estoque()
