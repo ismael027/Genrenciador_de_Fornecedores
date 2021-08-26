@@ -267,6 +267,12 @@ border-radius: 10px;</string>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
+ <tabstops>
+  <tabstop>lineEdit</tabstop>
+  <tabstop>lineEdit_2</tabstop>
+  <tabstop>lineEdit_3</tabstop>
+  <tabstop>Cadastro</tabstop>
+ </tabstops>
  <resources/>
  <connections/>
 </ui>
