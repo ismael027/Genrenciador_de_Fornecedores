@@ -3,14 +3,14 @@
 Autores: Flaviane Vitoria Cruz Ferrares (flavianeferrares) e Ismael Prado da Cruz Costa (ismael027)
 
 # Requisitos
-É necessário ter o PyQT5 tools intalado e o Python MySQL.
-Para instalar o PyQT5 digite no teminal o seguinte comando:
+É necessário ter o PyQT5 tools intalado e o Python MySQL.\
+Para instalar o PyQT5 digite no teminal o seguinte comando:\
 pip install pyqt5
 
-Depois digite o seguinte código para baixar a extensão tools:
+Depois digite o seguinte código para baixar a extensão tools:\
 pip install pyqt5-tools
 
-Para instalar o MySQL é so baixar o MySQL Workbench:
+Para instalar o MySQL é so baixar o MySQL Workbench:\
 https://dev.mysql.com/downloads/workbench/
 
 # Descrição
