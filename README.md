@@ -9,8 +9,17 @@ Depois digite o seguinte código para baixar a extensão tools:\
 pip install pyqt5-tools
 
 Para instalar o MySQL é so baixar o MySQL Workbench:\
-https://dev.mysql.com/downloads/workbench/
+https://dev.mysql.com/downloads/workbench/ \
 
+Para se conectar ao banco de dados edite a  classe Banco_Dados do arquivo BD.py\
+que conecta com o banco de dados, de acordo com a criação da sua máquina:
+ex.:\
+class Banco_Dados():\
+    def __init__(self):\
+        self.host = "localhost"\
+        self.user = "root"\
+        self.password = "123456"\
+        self.database = "trabalho_gestor_fornecedores"\
 # Descrição
 O Sistema desenvolvido tem como objetivo gerenciar informações sobre fornecedores. Seus produtos, endereço, informações sobre a compra e quantidade de produtos armazenados em estoque para uma empresa, podendo realizar operações de inserção, remoção, alteração e visualização dos dados armazenados.
 Inicialmente pensamos em uma empresa de distribuição alimentícia (uma loja de doces).
