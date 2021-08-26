@@ -11,14 +11,10 @@ class Estoque():
         self.Tela_Estoque = uic.loadUi("tela_estoque.ui")
         self.Tela_CadastroEst = uic.loadUi("tela_cadastro_estoque.ui")
         self.Tela_Estoque.remover.clicked.connect(self.Excluir_Estoque)
-        self.Tela_Estoque.add.clicked.connect(self.Menu_Cadastro)
-        self.Tela_CadastroEst.cadastro.pressed.connect(self.Cadastro_Estoque)
         self.Tela_CadastroEst.Pesquisar.clicked.connect(self.Pesquisa)
-        self.Tela_CadastroEst.save.pressed.connect(self.Salva)
-
 
     def Tabela_Estoque(self):
-        sql = "SELECT Q.codigo, P.nome, P.tipo_produto, Q.quantidade, Q.data_entrada, Q.hora FROM produto P, estoque Q where P.codigo = Q.codigo"
+        sql = "SELECT Q.codigo, Q.nome, Q.tipo_produto, Q.quantidade, Q.data_entrada, Q.hora FROM produto P, estoque Q where P.codigo = Q.codigo"
         resultado = banco.pesquisa(sql)
         self.Tela_Estoque.tabela.setRowCount(len(resultado))
         for i in range(0, len(resultado)):
@@ -33,7 +29,6 @@ class Estoque():
         # Exclui o produto do estoque
         sql = "SELECT id FROM trabalho_gestor_fornecedores.estoque"
         resultado = banco.pesquisa(sql)
-        print(resultado)
         id_excluir = resultado[linha][0]  # Pega o codigo do produto da linha selecionada
         sql = "DELETE FROM trabalho_gestor_fornecedores.estoque WHERE id =" + str(id_excluir)
         banco.deletar(sql)

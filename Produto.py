@@ -37,8 +37,8 @@ class Produto():
         #Cadastra no estoque
         data_entrada = data
         hora = data.strftime('%H:%M:%S')
-        sql = "INSERT INTO trabalho_gestor_fornecedores.estoque (codigo, data_entrada, hora, quantidade) VALUES (%s,%s,%s,%s)"
-        values = (codigo, data_entrada, hora, quantidade)
+        sql = "INSERT INTO trabalho_gestor_fornecedores.estoque (codigo, data_entrada, hora, quantidade, tipo_produto, nome) VALUES (%s,%s,%s,%s,%s,%s)"
+        values = (codigo, data_entrada, hora, quantidade, tipo, nome)
         banco.inserir(sql,values)
         self.Tabela_Produto()
 
@@ -65,8 +65,8 @@ class Produto():
         #Salva na tabela estoque
         data_entrada = data
         hora = data.strftime('%H:%M:%S')
-        sql = "INSERT INTO trabalho_gestor_fornecedores.estoque (codigo, data_entrada, hora,quantidade) VALUES (%s,%s,%s,%s)"
-        values = (id_busca, data_entrada, hora,quantidade)
+        sql = "INSERT INTO trabalho_gestor_fornecedores.estoque (codigo, data_entrada, hora, quantidade, tipo_produto, nome) VALUES (%s,%s,%s,%s,%s,%s)"
+        values = (id_busca, data_entrada, hora, quantidade, tipo, nome)
         banco.inserir(sql,values)
         self.Tabela_Produto()
 
