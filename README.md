@@ -1,4 +1,3 @@
-# Genrenciador_de_Fornecedores
 # Gerenciador_Fornecedores, Projeto realizado para Diciplina de Engenharia de Software II
 
 Autores: Flaviane Vitoria Cruz Ferrares (flavianeferrares) e Ismael Prado da Cruz Costa (ismael027)
