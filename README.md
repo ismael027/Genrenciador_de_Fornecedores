@@ -1,7 +1,5 @@
 # Gerenciador_Fornecedores, Projeto realizado para Diciplina de Engenharia de Software II
 
-Autores: Flaviane Vitoria Cruz Ferrares (flavianeferrares) e Ismael Prado da Cruz Costa (ismael027)
-
 # Requisitos
 É necessário ter o PyQT5 tools intalado e o Python MySQL.\
 Para instalar o PyQT5 digite no teminal o seguinte comando:\
